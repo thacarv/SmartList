@@ -1,10 +1,12 @@
-import { useState } from "react";
 import "./App.css";
+import TopMenu from "./components/TopMenu.jsx";
+import List from "./components/List.jsx";
 
 function App() {
   return (
     <>
-      <div></div>
+      <TopMenu />
+      <List />
     </>
   );
 }

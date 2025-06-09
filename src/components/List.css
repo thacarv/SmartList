@@ -1,0 +1,8 @@
+.list-main {
+  position: fixed;
+  top: 13vh;
+  left: 0;
+  background-color: blue;
+  height: 100vh;
+  width: 100vw;
+}
