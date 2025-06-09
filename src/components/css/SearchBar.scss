@@ -1,0 +1,25 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  height: 7vh;
+  width: 100vw;
+  padding: 0px 10vw;
+}
+
+.search-area {
+  display: flex;
+  height: 5vh;
+  width: 80vw;
+  border-radius: 20px;
+  background-color: #bbdefb;
+  input {
+    background-color: transparent;
+    width: 60vw;
+    border: none;
+    font-size: large;
+  }
+}
+
+.search-icon {
+  margin: 10px 15px;
+}

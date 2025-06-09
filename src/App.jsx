@@ -1,11 +1,11 @@
 import "./App.css";
-import TopMenu from "./components/TopMenu.jsx";
+import MainMenu from "./components/MainMenu.jsx";
 import List from "./components/List.jsx";
 
 function App() {
   return (
     <>
-      <TopMenu />
+      <MainMenu />
       <List />
     </>
   );

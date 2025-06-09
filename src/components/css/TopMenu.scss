@@ -1,0 +1,19 @@
+.top-menu {
+  height: 6vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  h2 {
+    color: #333333;
+  }
+}
+
+button {
+  height: 4.5vh;
+  background-color: transparent;
+}
+
+.user-icon {
+  margin-right: 3vw;
+}

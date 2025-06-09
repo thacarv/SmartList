@@ -1,19 +1,22 @@
-import "./TopMenu.css";
-import { Menu } from "lucide-react";
+import "./css/TopMenu.scss";
+import { Menu, ChevronDown, CircleUserRound } from "lucide-react";
 
 function TopMenu() {
+  const iconColor = "#333333";
+
   return (
-    <div className="menu-main">
-      <div>
-        <button>
-          {" "}
-          <Menu />
-        </button>
+    <div className="top-menu">
+      <button>
+        <Menu color={iconColor} />
+      </button>
+      <div className="list-name">
+        <h2>
+          Nome da Lista <ChevronDown className="font-bold" />
+        </h2>
       </div>
-      <div>
-        <h1>Menu</h1>
+      <div className="user-icon">
+        <CircleUserRound color={iconColor} size={40} />
       </div>
-      <div></div>
     </div>
   );
 }

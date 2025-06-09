@@ -1,4 +1,4 @@
-import "./List.css";
+import "./css/List.scss";
 
 function List() {
   return (
