@@ -1,25 +1,34 @@
+$font-color: #333333;
+
 .search-bar {
   display: flex;
   align-items: center;
   height: 7vh;
   width: 100vw;
-  padding: 0px 10vw;
+  padding: 2vh 8vw;
+  z-index: 99;
 }
 
 .search-area {
   display: flex;
   height: 5vh;
-  width: 80vw;
+  width: 85vw;
   border-radius: 20px;
-  background-color: #e3f2fd;
+  background-color: #fff3e4;
   input {
     background-color: transparent;
-    width: 60vw;
+    width: 70vw;
     border: none;
     font-size: large;
+    outline: none;
+  }
+
+  input,
+  select,
+  textarea {
+    color: $font-color;
   }
 }
-
 .search-icon {
   margin: 10px 15px;
 }

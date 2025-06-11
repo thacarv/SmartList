@@ -8,12 +8,7 @@ function SearchBar() {
         <div className="search-icon">
           <Search color="#333333" />
         </div>
-        <input
-          type="text"
-          name="searchform"
-          id="searchform"
-          placeholder="Coloque o nome do produto"
-        />
+        <input type="text" placeholder="Adicionar item" />
       </div>
     </div>
   );

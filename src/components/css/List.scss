@@ -6,11 +6,12 @@
   display: flex;
   position: fixed;
   justify-content: center;
-  top: 13vh;
+  top: 15vh;
   left: 0;
   padding: 5vh 0px;
   height: 100vh;
   width: 100vw;
+  z-index: 1;
 }
 
 .list-item {
@@ -19,8 +20,29 @@
   align-items: center;
   padding: 0px 10px;
   margin: 5px 0px;
-  width: 80vw;
   background-color: white;
+}
+
+.item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.8em;
+    height: 1.8em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: bottom;
+    border: 1px solid #ddd;
+    outline: none;
+    cursor: pointer;
+  }
+  input:checked {
+    background-color: rgb(139, 255, 135);
+  }
 }
 
 .bottom-text-value {
