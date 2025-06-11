@@ -9,14 +9,13 @@
   top: 15vh;
   left: 0;
   padding: 5vh 0px;
-  height: 100vh;
   width: 100vw;
   z-index: 1;
 }
 
 .list-item {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   padding: 0px 10px;
   margin: 5px 0px;
@@ -28,28 +27,15 @@
   justify-content: space-between;
   align-items: center;
   width: 80vw;
-  input {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 1.8em;
-    height: 1.8em;
-    background-color: white;
-    border-radius: 50%;
-    vertical-align: bottom;
-    border: 1px solid #ddd;
-    outline: none;
-    cursor: pointer;
+  background-color: transparent;
+  h2 {
+    padding-left: 10vw;
   }
-  input:checked {
-    background-color: rgb(139, 255, 135);
+  h3 {
+    padding-right: 10vw;
   }
 }
 
-.bottom-text-value {
-  display: flex;
-  position: fixed;
-  justify-content: space-around;
-  bottom: 5vh;
-  width: 80vw;
-  padding-left: 10px;
+.checked {
+  background-color: green;
 }

@@ -1,0 +1,27 @@
+.dropdown {
+  display: none;
+  width: 85vw;
+  background-color: rgb(255, 0, 0);
+  margin: 0px 8vw;
+}
+.searching {
+  display: flex;
+}
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+
+  .dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    width: 85vw;
+    align-items: center;
+    color: black;
+    h3 {
+      padding-left: 15vw;
+    }
+    p {
+      padding-right: 5vw;
+    }
+  }
+}

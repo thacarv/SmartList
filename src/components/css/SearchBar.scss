@@ -32,3 +32,8 @@ $font-color: #333333;
 .search-icon {
   margin: 10px 15px;
 }
+input:focus {
+  .options {
+    display: flex;
+  }
+}
