@@ -1,22 +1,42 @@
 import "./css/Dropdown.scss";
+import { v4 } from "uuid";
 
-function Dropdown({ searching }) {
-  const dropdown = ["maçã", "banana", "melancia", "pera"];
-  const value = 10;
+function Dropdown({ notSearching, searching, onAddItemSubmit }) {
+  const mockList = [
+    {
+      id: v4(),
+      item: "banana",
+      price: 2,
+      isChecked: false,
+    },
+    {
+      id: v4(),
+      item: "maçã",
+      price: 4,
+      isChecked: false,
+    },
+    {
+      id: v4(),
+      item: "pera",
+      price: 3,
+      isChecked: false,
+    },
+  ];
 
   return (
     <div className={`dropdown ${searching ? "searching" : null}`}>
       <div className="dropdown-content">
-        {dropdown.map((item) => (
+        {mockList.map((item) => (
           <div
+            onClick={() => onAddItemSubmit(item.item, item.price)}
             className="dropdown-item"
-            key={dropdown.indexOf(item) + 1}
-            onClick={() => console.log(item)}
+            key={item.id}
           >
-            <h3>{item}</h3> <p>{value}R$</p>
+            <h3>{item.item}</h3> <p>{item.price}R$</p>
           </div>
         ))}
       </div>
+      <div onClick={notSearching} className="background"></div>
     </div>
   );
 }

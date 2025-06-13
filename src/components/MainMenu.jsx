@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 import Dropdown from "./DropDown";
 import { useState } from "react";
 
-function MainMenu(onAddItemSubmit) {
+function MainMenu({ onAddItemSubmit, itemList }) {
   const [searching, setSearch] = useState(false);
 
   function onSearchClick() {
@@ -19,12 +19,15 @@ function MainMenu(onAddItemSubmit) {
       <TopMenu className="component" />
       <SearchBar
         className="component"
-        onAddItemSubmit={onAddItemSubmit}
         searching={searching}
         onSearchClick={onSearchClick}
-        notSearching={notSearching}
       />
-      <Dropdown searching={searching} />
+      <Dropdown
+        notSearching={notSearching}
+        searching={searching}
+        itemList={itemList}
+        onAddItemSubmit={onAddItemSubmit}
+      />
     </div>
   );
 }

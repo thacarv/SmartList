@@ -7,28 +7,8 @@ import { useState } from "react";
 import { v4 } from "uuid";
 
 function App() {
-  const mockList = [
-    {
-      id: v4(),
-      item: "banana",
-      price: 2,
-      isChecked: false,
-    },
-    {
-      id: v4(),
-      item: "maçã",
-      price: 4,
-      isChecked: false,
-    },
-    {
-      id: v4(),
-      item: "pera",
-      price: 3,
-      isChecked: false,
-    },
-  ];
-
-  const [itemList, setItemList] = useState(mockList);
+  const [itemList, setItemList] = useState([]);
+  const [finalPrice, setFinalPrice] = useState(0);
 
   function onAddItemSubmit(item, price) {
     const newItem = {
@@ -41,11 +21,22 @@ function App() {
     setItemList([...itemList, newItem]);
   }
 
+  function onItemClick(itemID) {
+    const updateItem = itemList.map((item) => {
+      if (item.id === itemID) {
+        return { ...item, isChecked: !item.isChecked };
+      }
+
+      return item;
+    });
+    setItemList(updateItem);
+  }
+
   return (
     <>
-      <MainMenu onAddItemSubmit={onAddItemSubmit} />
-      <List itemList={itemList} />
-      <TotalValue />
+      <MainMenu onAddItemSubmit={onAddItemSubmit} itemList={itemList} />
+      <List itemList={itemList} onItemClick={onItemClick} />
+      <TotalValue itemList={itemList} finalPrice={finalPrice} />
     </>
   );
 }

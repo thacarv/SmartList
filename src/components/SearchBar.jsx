@@ -10,7 +10,6 @@ function SearchBar(props) {
         </div>
         <input
           onFocus={props.onSearchClick}
-          onBlur={props.notSearching}
           type="text"
           placeholder="Adicionar item"
         />

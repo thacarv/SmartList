@@ -1,16 +1,17 @@
 .dropdown {
   display: none;
-  width: 85vw;
-  background-color: rgb(255, 0, 0);
-  margin: 0px 8vw;
+  width: 100vw;
+  height: 100vh;
 }
 .searching {
   display: flex;
 }
-.dropdown-content {
-  display: flex;
-  flex-direction: column;
 
+.dropdown-content {
+  margin: 0px 8vw;
+  width: 85vw;
+  background-color: red;
+  z-index: 99;
   .dropdown-item {
     display: flex;
     justify-content: space-between;
@@ -24,4 +25,14 @@
       padding-right: 5vw;
     }
   }
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.418);
+  z-index: 98;
 }
