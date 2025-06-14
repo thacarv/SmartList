@@ -6,7 +6,7 @@ function List(props) {
       <div className="list-item">
         {props.itemList.map((item) => (
           <div
-            onClick={() => props.onItemClick(item.id)}
+            onClick={() => props.onItemClick(item.id, item.price)}
             key={item.id}
             className={`item-container ${item.isChecked ? "checked" : null}`}
           >
