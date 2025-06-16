@@ -7,18 +7,21 @@ function Dropdown({ notSearching, searching, onAddItemSubmit }) {
       id: v4(),
       item: "banana",
       price: 2,
+      count: 1,
       isChecked: false,
     },
     {
       id: v4(),
       item: "maçã",
       price: 4,
+      count: 1,
       isChecked: false,
     },
     {
       id: v4(),
       item: "pera",
       price: 3,
+      count: 1,
       isChecked: false,
     },
   ];

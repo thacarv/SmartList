@@ -1,20 +1,49 @@
-$font-color: #333333;
+$font-color: #2e2c2c;
+$bg-color: #fff3e4;
+
+.top-menu {
+  display: flex;
+  align-items: flex-end;
+  .menu-button {
+    height: 8vh;
+    width: 11vh;
+    padding: 0;
+    margin-top: 2vh;
+    border: none;
+    border-radius: 50%;
+    background-color: $bg-color;
+    color: $font-color;
+  }
+}
 
 .search-bar {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   height: 7vh;
   width: 100vw;
-  padding: 2vh 8vw;
+  margin: 1vh 4vw;
   z-index: 99;
+}
+
+.list-name {
+  display: flex;
+  align-items: center;
+  height: 3vh;
+  margin: 0px 2vw;
+  text-align: left;
+  h3 {
+    color: $font-color;
+  }
 }
 
 .search-area {
   display: flex;
   height: 5vh;
-  width: 85vw;
+  width: 70vw;
   border-radius: 20px;
-  background-color: #fff3e4;
+  background-color: $bg-color;
+  margin-right: 2vw;
   input {
     background-color: transparent;
     width: 70vw;

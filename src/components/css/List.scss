@@ -1,3 +1,6 @@
+$item-name-color: #7e7e7e;
+$price-color: #ffb854;
+
 #root {
   color: #333333;
   touch-action: manipulation;
@@ -6,7 +9,8 @@
 .list-main {
   display: flex;
   position: fixed;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   top: 15vh;
   left: 0;
   padding: 5vh 0px;
@@ -16,27 +20,60 @@
 
 .list-item {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  padding: 0px 10px;
+
+  width: 80vw;
+  padding: 10px 10px;
   margin: 5px 0px;
   background-color: white;
 }
 
-.item-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 80vw;
-  background-color: transparent;
-  h2 {
-    padding-left: 10vw;
-  }
+.checked {
+  background-color: rgb(164, 230, 164);
+  h2,
   h3 {
-    padding-right: 10vw;
+    color: #2c2c2c !important;
   }
 }
 
-.checked {
-  background-color: green;
+.item-container {
+  height: 80px;
+  width: 60vw;
+}
+.item-description {
+  height: 50px;
+  h2,
+  h3 {
+    text-align: start;
+    margin: 0;
+  }
+  h2 {
+    color: $item-name-color;
+  }
+}
+.item-price {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  h3 {
+    text-decoration: underline;
+    color: $price-color;
+  }
+}
+.item-count {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30vw;
+  font-size: 2em;
+}
+.item-minus-trash,
+.item-plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  margin: 0px 5px;
 }
