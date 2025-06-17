@@ -27,10 +27,9 @@ function Body({ itemList, setItemList, finalPrice, setFinalPrice }) {
   }
 
   function checkCurrentFinalPrice(item, type) {
-    const price = item.price * item.count;
     const itemFullPrice = type
-      ? finalPrice + price
-      : finalPrice - price / item.count;
+      ? finalPrice + item.price
+      : finalPrice - item.price;
 
     setFinalPrice(itemFullPrice);
   }
