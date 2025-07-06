@@ -2,6 +2,28 @@ import { CircleMinus, CirclePlus, Info, Trash } from "lucide-react";
 import "./css/List.scss";
 
 function List(props) {
+  function handlesItemName(item) {
+    let a = "aproximadamente";
+    let b = "aprox";
+    let regexQuantidade = /\d+(?:[.,]\d+)?\s*(?:kg|g|l|ml)/gi;
+
+    let itemName = item.toLowerCase().replace(".", "");
+
+    if (itemName.includes(a)) {
+      itemName = itemName.replace(a, "");
+    } else {
+      itemName = itemName.replace(b, "");
+    }
+
+    let quantidade = itemName.match(regexQuantidade)[0].replace(" ", "");
+    if (quantidade == false) {
+      quantidade = "";
+    }
+
+    itemName = itemName.split(regexQuantidade)[0].trim().toUpperCase();
+    return [itemName, quantidade];
+  }
+
   return (
     <div className={"list-main"}>
       {props.itemList.map((item) => (
@@ -14,10 +36,12 @@ function List(props) {
             className="item-container"
           >
             <div className="item-description">
-              <h2>{item.item.toUpperCase()}</h2>
+              <h2>{handlesItemName(item.item)[0]}</h2>
               <div className="item-price">
                 <Info color="#FFB854" />
-                <h3>R$ {item.price}</h3>
+                <h3>
+                  R$ {item.price}/{handlesItemName(item.item)[1]}
+                </h3>
               </div>
             </div>
           </div>
