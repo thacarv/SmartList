@@ -1,24 +1,22 @@
 import "./App.css";
 import MainMenu from "./components/MainMenu.jsx";
-
 import { useState } from "react";
-import { v4 } from "uuid";
 import Body from "./components/Body.jsx";
 
 function App() {
   const [itemList, setItemList] = useState([]);
   const [finalPrice, setFinalPrice] = useState(0);
 
-  function onAddItemSubmit(item, price) {
+  function onAddItemSubmit(id, item, price) {
     const newItem = {
-      id: v4(),
+      id,
       item,
       price,
       count: 1,
       isChecked: false,
       toExclude: false,
     };
-    const newPrice = finalPrice + price;
+    const newPrice = parseFloat(finalPrice) + parseFloat(price);
 
     setItemList([...itemList, newItem]);
     setFinalPrice(newPrice);

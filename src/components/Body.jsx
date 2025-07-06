@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import List from "./List.jsx";
 import TotalValue from "./TotalValue.jsx";
+import CheckedList from "./CheckedList.jsx";
 
 function Body({ itemList, setItemList, finalPrice, setFinalPrice }) {
   const [currentValue, setCurrentValue] = useState(0);
@@ -12,9 +13,9 @@ function Body({ itemList, setItemList, finalPrice, setFinalPrice }) {
         checkCurrentValue(item);
         return { ...item, isChecked: !item.isChecked };
       }
-
       return item;
     });
+
     setItemList(updateItem);
   }
 
@@ -28,10 +29,11 @@ function Body({ itemList, setItemList, finalPrice, setFinalPrice }) {
 
   function checkCurrentFinalPrice(item, type) {
     const itemFullPrice = type
-      ? finalPrice + item.price
-      : finalPrice - item.price;
-
-    setFinalPrice(itemFullPrice);
+      ? parseFloat(finalPrice) + parseFloat(item.price)
+      : parseFloat(finalPrice) - parseFloat(item.price);
+    console.log(itemFullPrice);
+    console.log(typeof itemFullPrice);
+    setFinalPrice(itemFullPrice.toFixed(2));
   }
 
   function onExcludeClick(itemID) {
@@ -71,6 +73,7 @@ function Body({ itemList, setItemList, finalPrice, setFinalPrice }) {
         onExcludeClick={onExcludeClick}
         onPlusClick={onPlusClick}
       />
+      <CheckedList itemList={itemList} />
       <TotalValue
         itemList={itemList}
         finalPrice={finalPrice}

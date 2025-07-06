@@ -2,6 +2,7 @@
   display: none;
   width: 100vw;
   height: 100vh;
+  overflow: scroll;
 }
 .searching {
   display: flex;
@@ -10,7 +11,9 @@
 .dropdown-content {
   position: absolute;
   margin: 0px 8vw;
+  max-height: 50vh;
   width: 85vw;
+  overflow: scroll;
   background-color: red;
   z-index: 99;
   .dropdown-item {

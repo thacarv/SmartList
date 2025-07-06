@@ -17,7 +17,7 @@ function List(props) {
               <h2>{item.item.toUpperCase()}</h2>
               <div className="item-price">
                 <Info color="#FFB854" />
-                <h3>{item.price}R$/Kg</h3>
+                <h3>R$ {item.price}</h3>
               </div>
             </div>
           </div>

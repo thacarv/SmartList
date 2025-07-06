@@ -18,6 +18,9 @@ function SearchBar(props) {
             onFocus={props.onSearchClick}
             type="text"
             placeholder="Adicionar item"
+            onChange={(event) => {
+              props.onChangeEvent(event.target.value);
+            }}
           />
         </div>
       </div>

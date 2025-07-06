@@ -7,8 +7,8 @@ function TotalValue({ itemList, finalPrice, currentValue }) {
         {itemList.filter((item) => item.isChecked === true).length}/
         {itemList.length}
       </h3>
-      <h3>{currentValue}R$</h3>
-      <h3>{finalPrice}R$</h3>
+      <h3>R$ {currentValue}</h3>
+      <h3>R$ {finalPrice}</h3>
     </div>
   );
 }
