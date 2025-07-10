@@ -59,11 +59,54 @@ function MainMenu({ onAddItemSubmit }) {
     onSearchItem(inputValue);
   }
 
-  function onSearchItem(inputValue) {
-    let arr = products.filter((data) => {
-      return data.nome_completo.toLowerCase().startsWith(inputValue);
+  // Função que ordena alfabeticamente a array desejada.
+  function sortingSearchedItemsArray(arr) {
+    let result = arr.sort((item1, item2) => {
+      const nome1 = item1.nome_completo.toUpperCase(); // ignore upper and lowercase
+      const nome2 = item2.nome_completo.toUpperCase(); // ignore upper and lowercase
+      if (nome1 < nome2) {
+        // Internamente, verifica qual vem primeiro no alfabeto.
+        return -1;
+      }
+      if (nome1 > nome2) {
+        return 1;
+      }
+
+      // names must be equal
+      return 0;
     });
-    setSearchArray(arr);
+    return result;
+  }
+
+  // Função que recebe os itens salvos do BD e filtra de acordo com o nome do item pesquisado no SearchBar.
+  function onSearchItem(inputValue) {
+    let arr = products // Array que vai receber os itens salvos do BD na variável products
+      .filter((data) => {
+        if (inputValue === "") {
+          return;
+        } else {
+          return data.nome_completo.toLowerCase().includes(inputValue);
+        }
+      })
+      .slice(0, 50);
+
+    let arr_rt = []; // Array de retorno
+
+    let arrSW = arr.filter((data) => {
+      // Array filtrado para apenas startsWith nome pesquisado.
+      let itemSW = data.nome_completo.toLowerCase().startsWith(inputValue);
+      if (itemSW) {
+        return itemSW;
+      } else {
+        arr_rt.push(data);
+      }
+    });
+
+    let finalSortedArray = sortingSearchedItemsArray(arrSW).concat(
+      sortingSearchedItemsArray(arr_rt)
+    );
+
+    setSearchArray(finalSortedArray);
   }
 
   return (

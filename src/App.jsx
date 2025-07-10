@@ -17,7 +17,11 @@ function App() {
       toExclude: false,
     };
     const newPrice = parseFloat(finalPrice) + parseFloat(price);
-
+    for (item in itemList) {
+      if (itemList[item].id === newItem.id) {
+        return;
+      }
+    }
     setItemList([...itemList, newItem]);
     setFinalPrice(newPrice);
   }

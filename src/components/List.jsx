@@ -2,22 +2,27 @@ import { CircleMinus, CirclePlus, Info, Trash } from "lucide-react";
 import "./css/List.scss";
 
 function List(props) {
+  // Função que utiliza de Regex para separar o nome do protudo da unidade.
   function handlesItemName(item) {
-    let a = "aproximadamente";
-    let b = "aprox";
-    let regexQuantidade = /\d+(?:[.,]\d+)?\s*(?:kg|g|l|ml)/gi;
+    const palavrasParaExcluir = ["aproximadamente", "aprox"];
+    let regexQuantidade =
+      /\d+(?:[.,]\d+)?\s*(?<!\p{L})(?:kg|g|l|ml|dz|unidades|unidade|unds|litros|litro)(?!\p{L})/giu;
 
     let itemName = item.toLowerCase().replace(".", "");
 
-    if (itemName.includes(a)) {
-      itemName = itemName.replace(a, "");
-    } else {
-      itemName = itemName.replace(b, "");
+    // For loop que testa as palavras para excluir.
+    for (let palavra in palavrasParaExcluir) {
+      palavra = palavrasParaExcluir[palavra];
+      if (itemName.includes(palavra)) {
+        itemName = itemName.replace(palavra, "");
+      }
     }
+    let quantidade;
 
-    let quantidade = itemName.match(regexQuantidade)[0].replace(" ", "");
-    if (quantidade == false) {
-      quantidade = "";
+    try {
+      quantidade = itemName.match(regexQuantidade)[0].replace(" ", "");
+    } catch {
+      quantidade = "produto";
     }
 
     itemName = itemName.split(regexQuantidade)[0].trim().toUpperCase();
