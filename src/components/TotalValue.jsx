@@ -1,6 +1,9 @@
 import "./css/TotalValue.scss";
 
 function TotalValue({ itemList, finalPrice, currentValue }) {
+  finalPrice = parseFloat(finalPrice).toFixed(2);
+  currentValue = parseFloat(currentValue).toFixed(2);
+
   return (
     <div className="bottom-text-value ">
       <h3>

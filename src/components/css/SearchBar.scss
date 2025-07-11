@@ -3,47 +3,46 @@ $bg-color: #fff3e4;
 
 .top-menu {
   display: flex;
-  align-items: flex-end;
-  .menu-button {
-    height: 8vh;
-    width: 11vh;
-    padding: 0;
-    margin-top: 2vh;
-    border: none;
-    border-radius: 50%;
-    background-color: $bg-color;
-    color: $font-color;
-  }
+  position: absolute;
+  height: 12vh;
+  width: 100vw;
+  top: 0;
 }
 
 .search-bar {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 7vh;
+  align-items: center;
+  height: 12vh;
   width: 100vw;
-  margin: 1vh 4vw;
   z-index: 99;
 }
 
 .list-name {
   display: flex;
   align-items: center;
-  height: 3vh;
-  margin: 0px 2vw;
-  text-align: left;
+  justify-content: center;
+  height: 4vh;
+  margin: 1vh 0;
+  margin-right: 6vw;
   h3 {
     color: $font-color;
+  }
+  img {
+    height: 50px;
+    width: 50px;
+    z-index: 100;
   }
 }
 
 .search-area {
   display: flex;
   height: 5vh;
-  width: 70vw;
+  width: 90vw;
   border-radius: 20px;
   background-color: $bg-color;
-  margin-right: 2vw;
+
   input {
     background-color: transparent;
     width: 70vw;
@@ -58,11 +57,30 @@ $bg-color: #fff3e4;
     color: $font-color;
   }
 }
+
 .search-icon {
   margin: 10px 15px;
 }
 input:focus {
   .options {
     display: flex;
+  }
+}
+.searching {
+  height: 6vh;
+  width: 100vw;
+  border-radius: 0;
+  animation: searching 0.5s;
+}
+@keyframes searching {
+  from {
+    height: 5vh;
+    width: 90vw;
+    border-radius: 20px;
+  }
+  to {
+    height: 6vh;
+    width: 100vw;
+    border-radius: 0;
   }
 }

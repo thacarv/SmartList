@@ -1,8 +1,13 @@
 import "./css/Dropdown.scss";
 
 function Dropdown({ notSearching, searching, onAddItemSubmit, searchArray }) {
+  function longName(itemName) {
+    let nameArray = itemName.split(" ").slice(0, 9).join(" ");
+    return nameArray;
+  }
+
   return (
-    <div className={`dropdown ${searching ? "searching" : null}`}>
+    <div className={`dropdown ${searching ? "down" : ""}`}>
       <div className="dropdown-content">
         {searchArray.map((item) => (
           <div
@@ -16,7 +21,12 @@ function Dropdown({ notSearching, searching, onAddItemSubmit, searchArray }) {
             className="dropdown-item"
             key={item.id}
           >
-            <h3>{item.nome_completo}</h3> <p>R$ {item.valor}</p>
+            <div className="nome-completo">
+              <h3>{longName(item.nome_completo)}</h3>
+            </div>
+            <div className="valor-item">
+              <p>R${item.valor}</p>
+            </div>
           </div>
         ))}
       </div>

@@ -28,13 +28,15 @@ function App() {
 
   return (
     <>
-      <MainMenu onAddItemSubmit={onAddItemSubmit} itemList={itemList} />
-      <Body
-        itemList={itemList}
-        setItemList={setItemList}
-        finalPrice={finalPrice}
-        setFinalPrice={setFinalPrice}
-      />
+      <div className="application">
+        <MainMenu onAddItemSubmit={onAddItemSubmit} itemList={itemList} />
+        <Body
+          itemList={itemList}
+          setItemList={setItemList}
+          finalPrice={finalPrice}
+          setFinalPrice={setFinalPrice}
+        />
+      </div>
     </>
   );
 }

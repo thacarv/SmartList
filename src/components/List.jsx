@@ -53,7 +53,7 @@ function List(props) {
           <div className="item-count">
             <div
               onClick={() => props.onExcludeClick(item.id)}
-              className="item-minus-trash"
+              className={`controls ${item.isChecked ? "shown" : ""}`}
             >
               {item.count === 1 ? (
                 <Trash color="#333333" />
@@ -61,10 +61,10 @@ function List(props) {
                 <CircleMinus color="#333333" />
               )}
             </div>
-            {item.count}
+            <span>{item.count}</span>
             <div
               onClick={() => props.onPlusClick(item.id)}
-              className="item-plus"
+              className={`controls ${item.isChecked ? "shown" : ""}`}
             >
               <CirclePlus color="#333333" />
             </div>

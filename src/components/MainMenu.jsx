@@ -8,6 +8,7 @@ function MainMenu({ onAddItemSubmit }) {
   const [searching, setSearch] = useState(false);
   const [searchArray, setSearchArray] = useState([]);
   const [products, setProducts] = useState([]);
+  const [inputValue, setInputValue] = useState("Adicionar item");
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -52,10 +53,11 @@ function MainMenu({ onAddItemSubmit }) {
   }
   function notSearching() {
     setSearch(false);
+    setInputValue("");
   }
 
   function onChangeEvent(value) {
-    let inputValue = value.toLowerCase();
+    setInputValue(value.toLowerCase());
     onSearchItem(inputValue);
   }
 
@@ -80,7 +82,8 @@ function MainMenu({ onAddItemSubmit }) {
 
   // Função que recebe os itens salvos do BD e filtra de acordo com o nome do item pesquisado no SearchBar.
   function onSearchItem(inputValue) {
-    let arr = products // Array que vai receber os itens salvos do BD na variável products
+    // Array que vai receber os itens salvos do BD na variável products
+    let arr = products
       .filter((data) => {
         if (inputValue === "") {
           return;
@@ -116,6 +119,7 @@ function MainMenu({ onAddItemSubmit }) {
         searching={searching}
         onSearchClick={onSearchClick}
         onChangeEvent={onChangeEvent}
+        inputValue={inputValue}
       />
       <Dropdown
         notSearching={notSearching}
