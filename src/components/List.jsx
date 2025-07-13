@@ -2,7 +2,7 @@ import { CircleMinus, CirclePlus, Trash } from "lucide-react";
 import "./css/List.scss";
 
 function List(props) {
-  // Função que utiliza de Regex para separar o nome do protudo da unidade.
+  // Função que utiliza de Regex para separar o nome do protudo da unidade
   function handlesItemName(item) {
     const palavrasParaExcluir = ["aproximadamente", "aprox"];
     let regexQuantidade =
