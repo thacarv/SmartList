@@ -1,11 +1,14 @@
-import { useState } from "react";
-
 import List from "./List.jsx";
 import TotalValue from "./TotalValue.jsx";
 
-function Body({ itemList, setItemList, finalPrice, setFinalPrice }) {
-  const [currentValue, setCurrentValue] = useState(0);
-
+function Body({
+  itemList,
+  setItemList,
+  finalPrice,
+  setFinalPrice,
+  currentValue,
+  setCurrentValue,
+}) {
   function onItemClick(itemID) {
     const updateItem = itemList.map((item) => {
       if (item.id === itemID) {

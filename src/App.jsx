@@ -1,11 +1,18 @@
 import "./App.css";
 import MainMenu from "./components/MainMenu.jsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Body from "./components/Body.jsx";
 
 function App() {
-  const [itemList, setItemList] = useState([]);
-  const [finalPrice, setFinalPrice] = useState(0);
+  const [itemList, setItemList] = useState(
+    JSON.parse(localStorage.getItem("items")) || []
+  );
+  const [finalPrice, setFinalPrice] = useState(
+    JSON.parse(localStorage.getItem("finalPrice")) || 0
+  );
+  const [currentValue, setCurrentValue] = useState(
+    JSON.parse(localStorage.getItem("currentValue")) || 0
+  );
 
   function onAddItemSubmit(id, item, price) {
     const newItem = {
@@ -26,6 +33,12 @@ function App() {
     setFinalPrice(newPrice);
   }
 
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(itemList));
+    localStorage.setItem("finalPrice", JSON.stringify(finalPrice));
+    localStorage.setItem("currentValue", JSON.stringify(currentValue));
+  }, [itemList, finalPrice, currentValue]);
+
   return (
     <>
       <div className="application">
@@ -35,6 +48,8 @@ function App() {
           setItemList={setItemList}
           finalPrice={finalPrice}
           setFinalPrice={setFinalPrice}
+          currentValue={currentValue}
+          setCurrentValue={setCurrentValue}
         />
       </div>
     </>
