@@ -14,7 +14,7 @@ function MainMenu({ onAddItemSubmit }) {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost/listadecompras/getitem.php"
+          "https://cybernow.com.br/SmartList/api/"
         );
         setProducts(response.data);
       } catch (error) {
