@@ -12273,7 +12273,7 @@ function Rm(i) {
           className: "list-name",
           children: [
             $.jsx("img", {
-              src: "src/assets/tartarugas-em-compras.png",
+              src: "./assets/tartarugas-em-compras.png",
               alt: "",
             }),
             $.jsx("h3", { children: "SmartList" }),
