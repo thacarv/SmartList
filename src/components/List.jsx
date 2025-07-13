@@ -1,4 +1,4 @@
-import { CircleMinus, CirclePlus, Info, Trash } from "lucide-react";
+import { CircleMinus, CirclePlus, Trash } from "lucide-react";
 import "./css/List.scss";
 
 function List(props) {
@@ -43,7 +43,6 @@ function List(props) {
             <div className="item-description">
               <h2>{handlesItemName(item.item)[0]}</h2>
               <div className="item-price">
-                <Info color="#FFB854" />
                 <h3>
                   R$ {item.price}/{handlesItemName(item.item)[1]}
                 </h3>
