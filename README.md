@@ -6,6 +6,8 @@ SmartList é uma aplicação de lista de compras que permite você checar preço
 
 Com SmartList, você pode criar e gerenciar sua lista de compras e verificar os preços atualizados dos produtos em diferentes supermercados, ajudando a economizar tempo e dinheiro.
 
+![alt text](./Exemplo.jpeg)
+
 ## Tecnologias Utilizadas
 
 - **Frontend:** React, JavaScript, HTML, CSS, Sass  
